@@ -3,17 +3,17 @@ import AveeCare, { NotFoundError, type Patient, type PatientCreate, type Page } 
 
 async function usage(): Promise<void> {
   const avee = new AveeCare({ apiKey: 'ak_x_y', maxRetries: 3, timeout: 10_000 });
-  const page: Page<Patient> = await avee.patients.list({ status: 'active', limit: 25 });
+  const page: Page<Patient> = await avee.patients.list({ status: 'Active', lifecycleStage: 'Client', limit: 25 });
   const first: Patient | undefined = page.data[0];
-  const name: string | undefined = first?.firstName;
+  const name: string | null | undefined = first?.firstName;
   void name;
   for await (const p of avee.patients.list()) {
-    const status: 'active' | 'inactive' | 'discharged' = p.status;
+    const status: string | null = p.status;
     void status;
   }
   const params: PatientCreate = { firstName: 'A', lastName: 'B', address: null };
   const created = await avee.patients.create(params, { idempotencyKey: 'k' });
-  await avee.patients.update(created.id, { phone: null });
+  await avee.patients.update(created.id, { address: null });
   const deleted = await avee.patients.delete(created.id);
   const flag: true = deleted.deleted;
   void flag;
@@ -27,7 +27,7 @@ async function usage(): Promise<void> {
   }
   // @ts-expect-error visits.list requires the start window
   await avee.visits.list({});
-  // @ts-expect-error unknown status
-  await avee.patients.list({ status: 'unknown' });
+  // @ts-expect-error unknown lifecycle stage
+  await avee.patients.list({ lifecycleStage: 'Unknown' });
 }
 void usage;

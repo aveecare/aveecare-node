@@ -27,7 +27,7 @@ import AveeCare from 'aveecare';
 
 const avee = new AveeCare({ apiKey: process.env.AVEECARE_API_KEY });
 
-const page = await avee.patients.list({ status: 'active', limit: 25 });
+const page = await avee.patients.list({ status: 'Active', limit: 25 });
 for (const patient of page.data) {
   console.log(patient.id, patient.firstName, patient.lastName);
 }
@@ -51,7 +51,7 @@ Keep keys on your server. Never put an API key in browser or mobile code.
 // Retrieve, create, update and delete
 const patient = await avee.patients.retrieve('pat_8f2k1m9x');
 const created = await avee.patients.create({ firstName: 'Margaret', lastName: 'Alvarez' });
-const updated = await avee.patients.update(created.id, { phone: '+16025550142', email: null });
+const updated = await avee.patients.update(created.id, { schedulingNotes: 'Prefers morning visits', email: null });
 await avee.patients.delete(created.id);
 
 // Visits are listed by start-time window (at most 93 days)
