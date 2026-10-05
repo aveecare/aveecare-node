@@ -1,0 +1,66 @@
+{
+  "name": "aveecare",
+  "version": "0.1.0",
+  "description": "Official Node.js and TypeScript library for the AveeCare API: patients, visits, caregivers and billing for home care agencies.",
+  "keywords": [
+    "aveecare",
+    "home care",
+    "home care software",
+    "home health",
+    "EVV",
+    "caregiver scheduling",
+    "healthcare API",
+    "HIPAA",
+    "api",
+    "sdk"
+  ],
+  "homepage": "https://www.aveecare.com/docs/api",
+  "bugs": {
+    "url": "https://github.com/aveecare/aveecare-node/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aveecare/aveecare-node.git"
+  },
+  "license": "MIT",
+  "author": "AveeCare (https://www.aveecare.com)",
+  "type": "module",
+  "main": "./dist/cjs/entry.cjs",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/entry.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "clean": "node scripts/clean.mjs",
+    "build": "npm run clean && tsc -p tsconfig.json && tsc -p tsconfig.cjs.json && node scripts/finish-build.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.test.json",
+    "test": "npm run build && node --test test/client.test.mjs",
+    "test:live": "npm run build && node --test test/live/live.test.mjs",
+    "prepublishOnly": "npm test"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.0",
+    "typescript": "^5.6.0"
+  }
+}
