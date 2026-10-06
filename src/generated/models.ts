@@ -148,7 +148,7 @@ export interface Patient {
   /**
    * Given name.
    *
-   * @example "Margaret"
+   * @example "Eleanor"
    */
   firstName: string | null;
   /**
@@ -160,7 +160,7 @@ export interface Patient {
   /**
    * Family name.
    *
-   * @example "Alvarez"
+   * @example "Vance"
    */
   lastName: string | null;
   /**
@@ -190,7 +190,7 @@ export interface Patient {
   /**
    * Contact email address.
    *
-   * @example "margaret.alvarez@example.com"
+   * @example "eleanor.vance@example.com"
    */
   email: string | null;
   /**
@@ -287,7 +287,7 @@ export interface Patient {
   /**
    * Person legally responsible for the patient, if not the patient.
    *
-   * @example "Daniel Alvarez"
+   * @example "Susan Vance-Mitchell"
    */
   responsiblePartyName: string | null;
   /**
@@ -323,13 +323,13 @@ export interface Patient {
   /**
    * Who receives the bills.
    *
-   * @example "Daniel Alvarez"
+   * @example "Susan Vance-Mitchell"
    */
   billingContactName: string | null;
   /**
    * Email address bills are sent to.
    *
-   * @example "daniel.alvarez@example.com"
+   * @example "susan.mitchell@example.com"
    */
   billingContactEmail: string | null;
   /**
@@ -375,7 +375,7 @@ export interface PatientCreate {
   /**
    * Given name.
    *
-   * @example "Margaret"
+   * @example "Eleanor"
    */
   firstName: string;
   /**
@@ -387,7 +387,7 @@ export interface PatientCreate {
   /**
    * Family name.
    *
-   * @example "Alvarez"
+   * @example "Vance"
    */
   lastName: string;
   /**
@@ -417,7 +417,7 @@ export interface PatientCreate {
   /**
    * Contact email address.
    *
-   * @example "margaret.alvarez@example.com"
+   * @example "eleanor.vance@example.com"
    */
   email?: string | null;
   /**
@@ -513,7 +513,7 @@ export interface PatientCreate {
   /**
    * Person legally responsible for the patient, if not the patient.
    *
-   * @example "Daniel Alvarez"
+   * @example "Susan Vance-Mitchell"
    */
   responsiblePartyName?: string | null;
   /**
@@ -549,13 +549,13 @@ export interface PatientCreate {
   /**
    * Who receives the bills.
    *
-   * @example "Daniel Alvarez"
+   * @example "Susan Vance-Mitchell"
    */
   billingContactName?: string | null;
   /**
    * Email address bills are sent to.
    *
-   * @example "daniel.alvarez@example.com"
+   * @example "susan.mitchell@example.com"
    */
   billingContactEmail?: string | null;
   /**
@@ -586,7 +586,7 @@ export interface PatientUpdate {
   /**
    * Given name.
    *
-   * @example "Margaret"
+   * @example "Eleanor"
    */
   firstName?: string;
   /**
@@ -598,7 +598,7 @@ export interface PatientUpdate {
   /**
    * Family name.
    *
-   * @example "Alvarez"
+   * @example "Vance"
    */
   lastName?: string;
   /**
@@ -628,7 +628,7 @@ export interface PatientUpdate {
   /**
    * Contact email address.
    *
-   * @example "margaret.alvarez@example.com"
+   * @example "eleanor.vance@example.com"
    */
   email?: string | null;
   /**
@@ -724,7 +724,7 @@ export interface PatientUpdate {
   /**
    * Person legally responsible for the patient, if not the patient.
    *
-   * @example "Daniel Alvarez"
+   * @example "Susan Vance-Mitchell"
    */
   responsiblePartyName?: string | null;
   /**
@@ -760,13 +760,13 @@ export interface PatientUpdate {
   /**
    * Who receives the bills.
    *
-   * @example "Daniel Alvarez"
+   * @example "Susan Vance-Mitchell"
    */
   billingContactName?: string | null;
   /**
    * Email address bills are sent to.
    *
-   * @example "daniel.alvarez@example.com"
+   * @example "susan.mitchell@example.com"
    */
   billingContactEmail?: string | null;
   /**
@@ -837,7 +837,7 @@ export interface Contact {
   /**
    * Full name.
    *
-   * @example "Daniel Alvarez"
+   * @example "Susan Vance-Mitchell"
    */
   name: string | null;
   /**
@@ -855,7 +855,7 @@ export interface Contact {
   /**
    * Email address.
    *
-   * @example "daniel.alvarez@example.com"
+   * @example "susan.mitchell@example.com"
    */
   email: string | null;
   /**
@@ -901,7 +901,7 @@ export interface ContactCreate {
   /**
    * Full name.
    *
-   * @example "Daniel Alvarez"
+   * @example "Susan Vance-Mitchell"
    */
   name: string;
   /**
@@ -919,7 +919,7 @@ export interface ContactCreate {
   /**
    * Email address.
    *
-   * @example "daniel.alvarez@example.com"
+   * @example "susan.mitchell@example.com"
    */
   email?: string | null;
   /**
@@ -951,7 +951,7 @@ export interface ContactUpdate {
   /**
    * Full name.
    *
-   * @example "Daniel Alvarez"
+   * @example "Susan Vance-Mitchell"
    */
   name?: string;
   /**
@@ -969,7 +969,7 @@ export interface ContactUpdate {
   /**
    * Email address.
    *
-   * @example "daniel.alvarez@example.com"
+   * @example "susan.mitchell@example.com"
    */
   email?: string | null;
   /**
@@ -1751,7 +1751,7 @@ export interface PatientNote {
   /**
    * Display name of the author.
    *
-   * @example "Rosa Jimenez"
+   * @example "Maria Santos"
    */
   authorName: string | null;
   /**
@@ -1882,7 +1882,7 @@ export interface MedicationAdministration {
   /**
    * Who gave or recorded the dose.
    *
-   * @example "Rosa Jimenez"
+   * @example "Maria Santos"
    */
   administeredByName: string | null;
   /**
@@ -2053,7 +2053,7 @@ export interface Caregiver {
   /**
    * Given name.
    *
-   * @example "Rosa"
+   * @example "Maria"
    */
   firstName: string | null;
   /**
@@ -2065,7 +2065,7 @@ export interface Caregiver {
   /**
    * Family name.
    *
-   * @example "Jimenez"
+   * @example "Santos"
    */
   lastName: string | null;
   /**
@@ -2077,7 +2077,7 @@ export interface Caregiver {
   /**
    * Work email address.
    *
-   * @example "rosa.jimenez@example.com"
+   * @example "maria.santos@example.com"
    */
   email: string | null;
   /**
@@ -2208,7 +2208,7 @@ export interface CaregiverCreate {
   /**
    * Given name.
    *
-   * @example "Rosa"
+   * @example "Maria"
    */
   firstName: string;
   /**
@@ -2220,7 +2220,7 @@ export interface CaregiverCreate {
   /**
    * Family name.
    *
-   * @example "Jimenez"
+   * @example "Santos"
    */
   lastName: string;
   /**
@@ -2232,7 +2232,7 @@ export interface CaregiverCreate {
   /**
    * Work email address.
    *
-   * @example "rosa.jimenez@example.com"
+   * @example "maria.santos@example.com"
    */
   email?: string | null;
   /**
@@ -2348,7 +2348,7 @@ export interface CaregiverUpdate {
   /**
    * Given name.
    *
-   * @example "Rosa"
+   * @example "Maria"
    */
   firstName?: string;
   /**
@@ -2360,7 +2360,7 @@ export interface CaregiverUpdate {
   /**
    * Family name.
    *
-   * @example "Jimenez"
+   * @example "Santos"
    */
   lastName?: string;
   /**
@@ -2372,7 +2372,7 @@ export interface CaregiverUpdate {
   /**
    * Work email address.
    *
-   * @example "rosa.jimenez@example.com"
+   * @example "maria.santos@example.com"
    */
   email?: string | null;
   /**
@@ -2540,7 +2540,7 @@ export interface CaregiverNote {
   /**
    * Display name of the author.
    *
-   * @example "Avery Chen"
+   * @example "Alice Smith"
    */
   authorName: string | null;
   /**
@@ -2677,7 +2677,7 @@ export interface Certification {
   /**
    * Who verified the credential.
    *
-   * @example "Avery Chen"
+   * @example "Alice Smith"
    */
   verifiedByName: string | null;
   /**
@@ -4209,7 +4209,7 @@ export interface VisitRequest {
   /**
    * Caregiver's display name, taken from the caregiver's record.
    *
-   * @example "Rosa Jimenez"
+   * @example "Maria Santos"
    */
   caregiverName: string | null;
   /**
@@ -4221,7 +4221,7 @@ export interface VisitRequest {
   /**
    * Patient's display name.
    *
-   * @example "Margaret Alvarez"
+   * @example "Eleanor Vance"
    */
   patientName: string | null;
   /**
@@ -4305,7 +4305,7 @@ export interface VisitRequestCreate {
   /**
    * Patient's display name.
    *
-   * @example "Margaret Alvarez"
+   * @example "Eleanor Vance"
    */
   patientName?: string | null;
   /**
@@ -4362,7 +4362,7 @@ export interface VisitRequestUpdate {
   /**
    * Patient's display name.
    *
-   * @example "Margaret Alvarez"
+   * @example "Eleanor Vance"
    */
   patientName?: string | null;
   /**
@@ -4578,7 +4578,7 @@ export interface ShiftSwap {
   /**
    * Display name of the requesting caregiver, taken from the caregiver's record.
    *
-   * @example "Rosa Jimenez"
+   * @example "Maria Santos"
    */
   requestingCaregiverName: string | null;
   /**
@@ -4590,7 +4590,7 @@ export interface ShiftSwap {
   /**
    * Display name of the target caregiver.
    *
-   * @example "Kim Park"
+   * @example "Marcus Reed"
    */
   targetCaregiverName: string | null;
   /**
@@ -4663,7 +4663,7 @@ export interface ShiftSwapCreate {
   /**
    * Display name of the target caregiver.
    *
-   * @example "Kim Park"
+   * @example "Marcus Reed"
    */
   targetCaregiverName?: string | null;
   /**
@@ -4703,7 +4703,7 @@ export interface ShiftSwapUpdate {
   /**
    * Display name of the target caregiver.
    *
-   * @example "Kim Park"
+   * @example "Marcus Reed"
    */
   targetCaregiverName?: string | null;
   /**
@@ -5029,7 +5029,7 @@ export interface ProgressNote {
   /**
    * Display name of the caregiver, taken from the caregiver's record.
    *
-   * @example "Rosa Jimenez"
+   * @example "Maria Santos"
    */
   caregiverName: string | null;
   /**
@@ -5646,7 +5646,7 @@ export interface Incident {
   /**
    * Who reported it.
    *
-   * @example "Rosa Jimenez"
+   * @example "Maria Santos"
    */
   reportedByName: string | null;
   /**
@@ -6121,7 +6121,7 @@ export interface Event {
   /**
    * Who documented it.
    *
-   * @example "Avery Chen"
+   * @example "Alice Smith"
    */
   reportedByName: string | null;
   /**
@@ -6425,7 +6425,7 @@ export interface ReferralSource {
   /**
    * Main contact.
    *
-   * @example "Priya Natarajan"
+   * @example "Priya Patel"
    */
   contactName: string | null;
   /**
@@ -6443,7 +6443,7 @@ export interface ReferralSource {
   /**
    * Contact's email address.
    *
-   * @example "priya.natarajan@example.com"
+   * @example "priya.patel@example.com"
    */
   contactEmail: string | null;
   /**
@@ -6537,7 +6537,7 @@ export interface ReferralSourceCreate {
   /**
    * Main contact.
    *
-   * @example "Priya Natarajan"
+   * @example "Priya Patel"
    */
   contactName?: string | null;
   /**
@@ -6555,7 +6555,7 @@ export interface ReferralSourceCreate {
   /**
    * Contact's email address.
    *
-   * @example "priya.natarajan@example.com"
+   * @example "priya.patel@example.com"
    */
   contactEmail?: string | null;
   /**
@@ -6622,7 +6622,7 @@ export interface ReferralSourceUpdate {
   /**
    * Main contact.
    *
-   * @example "Priya Natarajan"
+   * @example "Priya Patel"
    */
   contactName?: string | null;
   /**
@@ -6640,7 +6640,7 @@ export interface ReferralSourceUpdate {
   /**
    * Contact's email address.
    *
-   * @example "priya.natarajan@example.com"
+   * @example "priya.patel@example.com"
    */
   contactEmail?: string | null;
   /**
@@ -6735,7 +6735,7 @@ export interface Referral {
   /**
    * Name of the person referred.
    *
-   * @example "Harold Becker"
+   * @example "Harold Finch"
    */
   patientName: string | null;
   /**
@@ -6829,7 +6829,7 @@ export interface ReferralCreate {
   /**
    * Name of the person referred.
    *
-   * @example "Harold Becker"
+   * @example "Harold Finch"
    */
   patientName: string;
   /**
@@ -6908,7 +6908,7 @@ export interface ReferralUpdate {
   /**
    * Name of the person referred.
    *
-   * @example "Harold Becker"
+   * @example "Harold Finch"
    */
   patientName?: string;
   /**
@@ -7492,7 +7492,7 @@ export interface PayrollEntry {
   /**
    * Who approved the entry.
    *
-   * @example "Avery Chen"
+   * @example "Alice Smith"
    */
   approvedByName: string | null;
   /**
@@ -8093,7 +8093,7 @@ export interface Me {
   /**
    * Email address of the person the key belongs to.
    *
-   * @example "avery@sunrisehomecare.example"
+   * @example "alice.smith@example.com"
    */
   email: string;
   /**
