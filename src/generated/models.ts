@@ -1,6 +1,9 @@
 // Code generated from the AveeCare OpenAPI specification. DO NOT EDIT.
 
-/** Whether this person is a prospective client or an admitted client. `null` means client. */
+/**
+ * Whether this person is a prospective client or an admitted client. `null` means client.
+ * Prospects appear in the prospective-patient pool in AveeCare, not on the patient roster.
+ */
 export type PatientLifecycleStage = "Prospect" | "Client";
 
 /** The main type of service the patient receives. */
@@ -15,7 +18,8 @@ export type PatientPaymentMethodPreference = "ACH" | "Card" | "Check" | "Cash" |
 /**
  * The client's status as shown in AveeCare. `Inactive` and `Discharged` mean the person is no
  * longer receiving care. A prospective client (`lifecycleStage: Prospect`) reads `Prospect` even
- * if you send `Active`.
+ * if you send `Active`. Creating a patient with `Prospect` makes them a prospective client.
+ * Defaults to `Active`.
  */
 export type PatientCreateStatus = "Active" | "Inactive" | "Prospect" | "Discharged";
 
@@ -191,7 +195,8 @@ export interface Patient {
   email: string | null;
   /**
    * Whether the patient is an active client. Only active clients are scheduled and billed. A
-   * prospective client is always inactive.
+   * prospective client is always inactive. If you leave it out on create, it is `false` for a
+   * prospect or an `Inactive` or `Discharged` status and `true` otherwise.
    *
    * @example true
    */
@@ -199,7 +204,8 @@ export interface Patient {
   /**
    * The client's status as shown in AveeCare. `Inactive` and `Discharged` mean the person is no
    * longer receiving care. A prospective client (`lifecycleStage: Prospect`) reads `Prospect` even
-   * if you send `Active`. Usually one of `Active`, `Inactive`, `Prospect`, `Discharged`; records
+   * if you send `Active`. Creating a patient with `Prospect` makes them a prospective client.
+   * Defaults to `Active`. Usually one of `Active`, `Inactive`, `Prospect`, `Discharged`; records
    * imported from another system can hold other values.
    *
    * @example "Active"
@@ -207,6 +213,7 @@ export interface Patient {
   status: string | null;
   /**
    * Whether this person is a prospective client or an admitted client. `null` means client.
+   * Prospects appear in the prospective-patient pool in AveeCare, not on the patient roster.
    *
    * @example "Client"
    */
@@ -415,7 +422,8 @@ export interface PatientCreate {
   email?: string | null;
   /**
    * Whether the patient is an active client. Only active clients are scheduled and billed. A
-   * prospective client is always inactive.
+   * prospective client is always inactive. If you leave it out on create, it is `false` for a
+   * prospect or an `Inactive` or `Discharged` status and `true` otherwise.
    *
    * @example true
    */
@@ -423,13 +431,15 @@ export interface PatientCreate {
   /**
    * The client's status as shown in AveeCare. `Inactive` and `Discharged` mean the person is no
    * longer receiving care. A prospective client (`lifecycleStage: Prospect`) reads `Prospect` even
-   * if you send `Active`.
+   * if you send `Active`. Creating a patient with `Prospect` makes them a prospective client.
+   * Defaults to `Active`.
    *
    * @example "Active"
    */
   status?: PatientCreateStatus | null;
   /**
    * Whether this person is a prospective client or an admitted client. `null` means client.
+   * Prospects appear in the prospective-patient pool in AveeCare, not on the patient roster.
    *
    * @example "Client"
    */
@@ -623,7 +633,8 @@ export interface PatientUpdate {
   email?: string | null;
   /**
    * Whether the patient is an active client. Only active clients are scheduled and billed. A
-   * prospective client is always inactive.
+   * prospective client is always inactive. If you leave it out on create, it is `false` for a
+   * prospect or an `Inactive` or `Discharged` status and `true` otherwise.
    *
    * @example true
    */
@@ -631,13 +642,15 @@ export interface PatientUpdate {
   /**
    * The client's status as shown in AveeCare. `Inactive` and `Discharged` mean the person is no
    * longer receiving care. A prospective client (`lifecycleStage: Prospect`) reads `Prospect` even
-   * if you send `Active`.
+   * if you send `Active`. Creating a patient with `Prospect` makes them a prospective client.
+   * Defaults to `Active`.
    *
    * @example "Active"
    */
   status?: PatientCreateStatus | null;
   /**
    * Whether this person is a prospective client or an admitted client. `null` means client.
+   * Prospects appear in the prospective-patient pool in AveeCare, not on the patient roster.
    *
    * @example "Client"
    */
@@ -2074,7 +2087,8 @@ export interface Caregiver {
    */
   status: CaregiverStatus | null;
   /**
-   * Whether the caregiver can be scheduled.
+   * Whether the caregiver can be scheduled. If you leave it out on create, it is `false` for an
+   * `Inactive` status and `true` otherwise.
    *
    * @example true
    */
@@ -2228,7 +2242,8 @@ export interface CaregiverCreate {
    */
   status?: CaregiverStatus | null;
   /**
-   * Whether the caregiver can be scheduled.
+   * Whether the caregiver can be scheduled. If you leave it out on create, it is `false` for an
+   * `Inactive` status and `true` otherwise.
    *
    * @example true
    */
@@ -2367,7 +2382,8 @@ export interface CaregiverUpdate {
    */
   status?: CaregiverStatus | null;
   /**
-   * Whether the caregiver can be scheduled.
+   * Whether the caregiver can be scheduled. If you leave it out on create, it is `false` for an
+   * `Inactive` status and `true` otherwise.
    *
    * @example true
    */
