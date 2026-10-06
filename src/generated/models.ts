@@ -8117,7 +8117,7 @@ export interface MeOrganization {
   /**
    * Agency name.
    *
-   * @example "Sunrise Home Care"
+   * @example "AveeCare Demo Agency"
    */
   name: string | null;
 }
